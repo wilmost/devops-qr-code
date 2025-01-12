@@ -26,7 +26,7 @@ app.add_middleware(
 
 # aws_access_key = os.getenv('AWS_ACCESS_KEY_ID')
 # aws_secret_key = os.getenv('AWS_SECRET_ACCESS_KEY')
-
+bucket_name = os.getenv("BUCKET_NAME")
 # AWS S3 Configuration
 s3 = boto3.client(
     's3',
@@ -35,7 +35,7 @@ s3 = boto3.client(
 
     
 
-bucket_name = 'wilmost-dragons-app' # Add your bucket name here
+
 
 @app.post("/generate-qr/")
 async def generate_qr(url: str):
